@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Extension Allocation{% endblock %}
+
+{% block content %}
+<div class="flex">
+    <!-- Left column for extension allocation -->
+    <div class="w-1/2 mr-4 border-r pr-4">
+        <h1 class="text-3xl font-semibold mb-5">Mentors data</h1>
+        <table class="table-auto w-full">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">Mentor ID</th>
+                    <th class="px-4 py-2">Mentor Name</th>
+                    <th class="px-4 py-2">Mentor Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mentor in mentors %}
+                <tr>
+                    <td class="border px-4 py-2 text-center">{{ mentor[0]}}</td>
+                    <td class="border px-4 py-2 text-center">{{ mentor[1] }}</td>
+                    <td class="border px-4 py-2 text-center">{{ mentor[2] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- Right column for table number allocation -->
+    <div class="w-1/2">
+        <h1 class="text-3xl font-semibold mb-5">Judges data</h1>
+        <table class="table-auto w-full">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">Judge id</th>
+                    <th class="px-4 py-2">judge name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for judge in judges %}
+                <tr>
+                    <td class="border px-4 py-2 text-center">{{ judge[0]}}</td>
+                    <td class="border px-4 py-2 text-center">{{ judge[1]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

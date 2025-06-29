@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Teams{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-semibold mb-5">Add New Team</h1>
+<form action="/add_team" method="post">
+    <div class="flex mb-4">
+        <div class="w-1/2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="team_name">Team Name</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="team_name" type="text" placeholder="Team Name" name="team_name">
+        </div>
+    </div>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Add Team</button>
+</form>
+
+<hr class="my-8">
+
+<div class="mb-8">
+    <h2 class="text-xl font-semibold mb-3">Teams with Extension and Table Numbers</h2>
+    <table class="table-auto w-full">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">Team ID</th>
+                <th class="px-4 py-2">Team Name</th>
+                <th class="px-4 py-2">No. of Members</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in teams %}
+            <tr>
+                <td class="border px-4 py-2 text-center">{{ team[0] }}</td>
+                <td class="border px-4 py-2 text-center">{{ team[1] }}</td>
+                <td class="border px-4 py-2 text-center">{{ team[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

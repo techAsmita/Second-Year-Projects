@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Check-In{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-semibold mb-5">Check-In</h1>
+
+<!-- Final Scores Table -->
+<div class="mb-8">
+    <h2 class="text-xl font-semibold mb-3">Check-In Table</h2>
+    <table class="table-auto w-full">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">Member ID</th>
+                <th class="px-4 py-2">Check-In Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for check_in in checkin %}
+            <tr>
+                <td class="border px-4 py-2 text-center">{{ check_in[0] }}</td>
+                <td class="border px-4 py-2 text-center">{{ check_in[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

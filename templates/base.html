@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Database Interface{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-6">
+        <div class="container mx-auto flex justify-between">
+            <div>
+                <a class="text-white hover:text-gray-300" href="/">Home</a>
+            </div>
+            <div>
+                <a class="text-white hover:text-gray-300 ml-4" href="/teams">Teams</a>
+                <a class="text-white hover:text-gray-300 ml-4" href="/members">Members</a>
+                <a class="text-white hover:text-gray-300 ml-4" href="/checkin">Check-In</a>
+                <a class="text-white hover:text-gray-300 ml-4" href="/mentor_judges">Mentor/Judges Data</a>
+                <a class="text-white hover:text-gray-300 ml-4" href="/extensions">Extensions&nbsp;&nbsp;&nbsp;&nbsp;Tables</a>
+                <a class="text-white hover:text-gray-300 ml-4" href="/teamSubmission">Team Submissions</a>
+                <a class="text-white hover:text-gray-300 ml-4" href="/mentorScoring">Mentor Scores</a>
+                <a class="text-white hover:text-gray-300 ml-4" href="/judgeScoring">Judge Scores</a>
+                <a class="text-white hover:text-gray-300 ml-4" href="/finalScores">Final Scores</a>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Content -->
+    <div class="container mx-auto mt-10">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
